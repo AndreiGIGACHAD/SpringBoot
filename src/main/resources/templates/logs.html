@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Журнал действий</title>
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+    </head>
+    <body>
+        <div th:replace="~{fragments :: nav}">
+        </div>
+        <main class="container">
+            <div class="eyebrow">AUDIT TRAIL</div>
+            <h1>Журнал <span class="gradient-text">действий</span>
+            </h1>
+            <div class="table-shell">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Дата и время</th>
+                            <th>Пользователь</th>
+                            <th>Действие</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="a:${actions}">
+                            <td th:text="${#temporals.format(a.actionDate,'dd.MM.yyyy HH:mm:ss')}">
+                            </td>
+                            <td th:text="${a.username}">
+                            </td>
+                            <td th:text="${a.description}">
+                            </td>
+                        </tr>
+                        <tr th:if="${#lists.isEmpty(actions)}">
+                            <td colspan="3" class="empty-state">Записей пока нет.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="hint">Файловый журнал приложения: <code>logs/electronova.log</code>
+            </p>
+        </main>
+    </body>
+</html>

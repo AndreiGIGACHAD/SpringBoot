@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Каталог товаров — ELECTRONOVA</title>
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+    </head>
+    <body>
+        <div th:replace="~{fragments :: nav}">
+        </div>
+        <main class="container">
+            <div class="page-heading">
+                <div>
+                    <div class="eyebrow">КАТАЛОГ / INVENTORY</div>
+                    <h1>Каталог <span class="gradient-text">товаров</span>
+                    </h1>
+                    <p>Товары, характеристики и складские остатки.</p>
+                </div>
+                <a class="button" sec:authorize="!hasRole('READ_ONLY')" th:href="@{/products/new}">＋ Добавить товар</a>
+            </div>
+            <div class="table-shell">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Товар</th>
+                            <th>Категория</th>
+                            <th>Артикул</th>
+                            <th>Цена</th>
+                            <th>Остаток</th>
+                            <th sec:authorize="!hasRole('READ_ONLY')">Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="p:${products}">
+                            <td class="muted-cell" th:text="${p.id}">
+                            </td>
+                            <td>
+                                <div class="product-name" th:text="${p.name}">
+                                </div>
+                                <div class="subline" th:text="${p.brand + ' ' + (p.model == null ? '' : p.model)}">
+                                </div>
+                            </td>
+                            <td>
+                                <span class="pill" th:text="${p.category.name}">
+                                </span>
+                            </td>
+                            <td th:text="${p.sku}">
+                            </td>
+                            <td class="price-cell">
+                                <span th:text="${#numbers.formatDecimal(p.price,1,2)}">
+                                </span> ₽</td>
+                            <td>
+                                <span class="stock" th:classappend="${p.stock < 5 ? ' stock-low' : ''}" th:text="${p.stock} + ' шт.'">
+                            </span>
+                        </td>
+                        <td class="row-actions" sec:authorize="!hasRole('READ_ONLY')">
+                            <a class="action-link" th:href="@{/products/{id}/edit(id=${p.id})}">Изменить</a>
+                            <form th:action="@{/products/{id}/delete(id=${p.id})}" method="post" onsubmit="return confirm('Удалить товар?')">
+                                <button class="delete-link">Удалить</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr th:if="${#lists.isEmpty(products)}">
+                        <td colspan="7" class="empty-state">Товаров пока нет. Добавьте первую позицию.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="hint">USER видит созданные им записи; READ_ONLY может просматривать каталог; ADMIN управляет всеми данными.</p>
+    </main>
+</body>
+</html>

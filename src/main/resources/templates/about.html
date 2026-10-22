@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>О проекте</title>
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+    </head>
+    <body>
+        <div th:replace="~{fragments :: nav}">
+        </div>
+        <main class="container narrow">
+            <div class="eyebrow">ABOUT ELECTRONOVA</div>
+            <h1>О <span class="gradient-text">приложении</span>
+            </h1>
+            <section class="form-card">
+                <p>
+                    <b>Название:</b> ELECTRONOVA — учётный веб-каталог магазина электронной техники.</p>
+                <p>
+                    <b>Назначение:</b> хранение каталога товаров, категорий, цен и складских остатков.</p>
+                <p>
+                    <b>Основные разделы:</b> бытовая техника; цифровые товары; комплектующие ПК; компьютеры и периферия; аудио и видео; игры и развлечения.</p>
+                <p>
+                    <b>Технологии:</b> Java 21, Spring Boot, Spring MVC, Spring Security, Spring Data JPA, Thymeleaf, H2 Database и Actuator.</p>
+                <p>
+                    <b>Безопасность:</b> пароли хранятся в хешированном виде; новые пользователи получают роль READ_ONLY; USER управляет собственными записями; ADMIN имеет полный доступ.</p>
+                <p>
+                    <b>Разработчик:</b> укажите ФИО студента.</p>
+                <p>
+                    <b>Назначение работы:</b> учебный проект для демонстрации CRUD-операций, ролевого доступа, работы с БД и журналирования.</p>
+            </section>
+        </main>
+    </body>
+</html>

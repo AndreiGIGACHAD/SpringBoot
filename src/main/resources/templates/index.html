@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Магазин электроники</title>
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+    </head>
+    <body>
+        <div th:replace="~{fragments :: nav}">
+        </div>
+        <main class="container">
+            <section class="hero">
+                <div class="hero-copy">
+                    <div class="eyebrow">Учебное веб-приложение</div>
+                    <h1>Магазин электронной техники</h1>
+                    <p>Управление товарами, категориями и складскими остатками. Используйте каталог для просмотра и редактирования записей в соответствии с вашей ролью.</p>
+                    <div class="hero-actions">
+                        <a class="button" th:href="@{/products}">Открыть каталог</a>
+                        <a class="text-link" th:href="@{/categories}">Посмотреть категории</a>
+                    </div>
+                    <div class="hero-meta">
+                        <span>Бытовая техника</span>
+                        <span>Цифровые товары</span>
+                        <span>Комплектующие ПК</span>
+                    </div>
+                </div>
+            </section>
+            <section class="stats-grid">
+                <article class="stat-card">
+                    <span class="stat-label">ТОВАРОВ В БАЗЕ</span>
+                    <strong th:text="${productCount}">0</strong>
+                    <span class="stat-note">Всего позиций каталога</span>
+                </article>
+                <article class="stat-card">
+                    <span class="stat-label">КАТЕГОРИЙ</span>
+                    <strong th:text="${categoryCount}">0</strong>
+                    <span class="stat-note">Разделы магазина</span>
+                </article>
+                <article class="stat-card">
+                    <span class="stat-label">МАЛЫЙ ОСТАТОК</span>
+                    <strong th:text="${lowStock}">0</strong>
+                    <span class="stat-note">Товаров меньше 5 штук</span>
+                </article>
+                <article class="stat-card stat-highlight">
+                    <span class="stat-label">РАСЧЁТ ЦЕНЫ</span>
+                    <strong>%</strong>
+                    <a th:href="@{/calculator}">Открыть калькулятор</a>
+                </article>
+            </section>
+            <section class="section-heading">
+                <div>
+                    <div class="eyebrow">Разделы каталога</div>
+                    <h2>Категории товаров</h2>
+                </div>
+                <a class="text-link" th:href="@{/categories}">Все категории</a>
+            </section>
+            <section class="category-grid">
+                <a class="category-tile" th:href="@{/products}">
+                    <span class="tile-number">01</span>
+                    <h3>Бытовая техника</h3>
+                    <p>Техника для дома и кухни</p>
+                </a>
+                <a class="category-tile" th:href="@{/products}">
+                    <span class="tile-number">02</span>
+                    <h3>Цифровые товары</h3>
+                    <p>Смартфоны, планшеты и гаджеты</p>
+                </a>
+                <a class="category-tile" th:href="@{/products}">
+                    <span class="tile-number">03</span>
+                    <h3>Комплектующие ПК</h3>
+                    <p>Процессоры, видеокарты и память</p>
+                </a>
+                <a class="category-tile" th:href="@{/products}">
+                    <span class="tile-number">04</span>
+                    <h3>Компьютеры и периферия</h3>
+                    <p>Ноутбуки, мониторы и устройства ввода</p>
+                </a>
+                <a class="category-tile" th:href="@{/products}">
+                    <span class="tile-number">05</span>
+                    <h3>Аудио и видео</h3>
+                    <p>Наушники, колонки и телевизоры</p>
+                </a>
+                <a class="category-tile" th:href="@{/products}">
+                    <span class="tile-number">06</span>
+                    <h3>Игры и развлечения</h3>
+                    <p>Игровые консоли и аксессуары</p>
+                </a>
+            </section>
+            <footer>
+                <span>Учебный проект магазина электронной техники</span>
+                <a href="/actuator/health">Статус приложения</a>
+            </footer>
+        </main>
+    </body>
+</html>

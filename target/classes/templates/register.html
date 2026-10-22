@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Регистрация</title>
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+    </head>
+    <body class="auth-page">
+        <main class="auth-panel">
+            <h1>Регистрация</h1>
+            <p class="auth-subtitle">Новая учётная запись получит роль READ_ONLY.</p>
+            <p class="error" th:if="${error}" th:text="${error}">
+            </p>
+            <form th:action="@{/register}" method="post">
+                <label>Логин<input name="username" required minlength="3" maxlength="50" placeholder="Не менее 3 символов">
+                </label>
+                <label>Пароль<input name="password" type="password" required minlength="8" placeholder="Не менее 8 символов">
+                </label>
+                <label>Повторите пароль<input name="confirmPassword" type="password" required placeholder="Повторите пароль">
+                </label>
+                <button class="button auth-submit">Создать аккаунт</button>
+            </form>
+            <p class="auth-bottom">Уже есть аккаунт? <a th:href="@{/login}">Войти</a>
+            </p>
+        </main>
+    </body>
+</html>

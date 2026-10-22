@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Пользователи и роли</title>
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+    </head>
+    <body>
+        <div th:replace="~{fragments :: nav}">
+        </div>
+        <main class="container">
+            <div class="eyebrow">ACCESS CONTROL</div>
+            <h1>Пользователи и <span class="gradient-text">роли</span>
+            </h1>
+            <div class="table-shell">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Логин</th>
+                            <th>Дата регистрации</th>
+                            <th>Роль</th>
+                            <th>Изменить роль</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="u:${users}">
+                            <td th:text="${u.id}">
+                            </td>
+                            <td th:text="${u.username}">
+                            </td>
+                            <td th:text="${#temporals.format(u.registeredAt,'dd.MM.yyyy HH:mm')}">
+                            </td>
+                            <td>
+                                <span class="pill" th:text="${u.role}">
+                                </span>
+                            </td>
+                            <td>
+                                <form class="inline-form" th:action="@{/admin/users/{id}/role(id=${u.id})}" method="post">
+                                    <select name="role">
+                                        <option th:each="r:${roles}" th:value="${r}" th:text="${r}" th:selected="${r==u.role}">
+                                        </option>
+                                    </select>
+                                    <button class="button small-button">Сохранить</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </body>
+</html>

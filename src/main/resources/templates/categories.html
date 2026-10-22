@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Категории</title>
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+    </head>
+    <body>
+        <div th:replace="~{fragments :: nav}">
+        </div>
+        <main class="container">
+            <div class="page-heading">
+                <div>
+                    <div class="eyebrow">CATALOG STRUCTURE</div>
+                    <h1>Категории <span class="gradient-text">магазина</span>
+                    </h1>
+                    <p>Разделы, по которым организован каталог.</p>
+                </div>
+                <a class="button" sec:authorize="!hasRole('READ_ONLY')" th:href="@{/categories/new}">＋ Новая категория</a>
+            </div>
+            <section class="category-list">
+                <article class="category-row" th:each="c,iter:${categories}">
+                    <div class="category-index" th:text="${'0' + (iter.index + 1)}">
+                    </div>
+                    <div class="category-info">
+                        <h3 th:text="${c.name}">
+                        </h3>
+                        <p th:text="${c.description}">
+                        </p>
+                    </div>
+                    <div class="category-actions" sec:authorize="!hasRole('READ_ONLY')">
+                        <a class="action-link" th:href="@{/categories/{id}/edit(id=${c.id})}">Изменить</a>
+                        <form th:action="@{/categories/{id}/delete(id=${c.id})}" method="post" onsubmit="return confirm('Удалить категорию? У категории не должно быть товаров.')">
+                            <button class="delete-link">Удалить</button>
+                        </form>
+                    </div>
+                </article>
+                <p class="empty-state" th:if="${#lists.isEmpty(categories)}">Категории ещё не добавлены.</p>
+            </section>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Калькулятор цены</title>
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+    </head>
+    <body>
+        <div th:replace="~{fragments :: nav}">
+        </div>
+        <main class="container narrow">
+            <div class="eyebrow">PRICE LAB / CALCULATOR</div>
+            <h1>Калькулятор <span class="gradient-text">цены</span>
+            </h1>
+            <p class="page-intro">Рассчитайте цену после скидки или после добавления торговой наценки.</p>
+            <form class="form-card" th:action="@{/calculator}" method="post">
+                <label>Исходная цена, ₽<input name="price" type="number" min="0" step="0.01" required th:value="${price}">
+                </label>
+                <label>Скидка, %<input name="percent" type="number" min="0" max="100" step="0.1" required th:value="${percent}">
+                </label>
+                <label>Наценка, %<input name="markup" type="number" min="0" max="500" step="0.1" required th:value="${markup}">
+                </label>
+                <button class="button">Рассчитать</button>
+                <section class="result-grid" th:if="${discounted != null}">
+                    <div class="result-card">
+                        <span>Цена со скидкой</span>
+                        <strong th:text="${#numbers.formatDecimal(discounted,1,2) + ' ₽'}">
+                        </strong>
+                        <small>Цена × (1 − скидка / 100)</small>
+                    </div>
+                    <div class="result-card result-violet">
+                        <span>Цена с наценкой</span>
+                        <strong th:text="${#numbers.formatDecimal(finalPrice,1,2) + ' ₽'}">
+                        </strong>
+                        <small>Цена × (1 + наценка / 100)</small>
+                    </div>
+                </section>
+            </form>
+        </main>
+    </body>
+</html>

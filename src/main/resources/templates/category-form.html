@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Категория</title>
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+    </head>
+    <body>
+        <div th:replace="~{fragments :: nav}">
+        </div>
+        <main class="container narrow">
+            <div class="eyebrow">CATEGORY MANAGEMENT</div>
+            <h1 th:text="${category.id == null ? 'Новая категория' : 'Редактирование категории'}">
+            </h1>
+            <p class="error" th:if="${error}" th:text="${error}">
+            </p>
+            <form class="form-card" th:object="${category}" th:action="${category.id == null ? '/categories' : '/categories/' + category.id}" method="post">
+                <label>Название<input th:field="*{name}" required maxlength="100" placeholder="Например, Аудио и видео">
+                </label>
+                <label>Описание<textarea th:field="*{description}" rows="4" maxlength="1000" placeholder="Какие товары входят в раздел">
+                    </textarea>
+                </label>
+                <div class="form-actions">
+                    <button class="button">Сохранить категорию</button>
+                    <a class="text-link" th:href="@{/categories}">Отмена</a>
+                </div>
+            </form>
+        </main>
+    </body>
+</html>

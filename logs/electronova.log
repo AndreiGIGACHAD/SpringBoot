@@ -1,0 +1,80 @@
+2026-10-22T13:59:35.255+05:00  INFO 3324 --- [electronova] [main] r.e.electroshop.ElectroShopApplication   : Starting ElectroShopApplication using Java 21.0.12.1 with PID 3324 (C:\Users\bratu\OneDrive\Рабочий стол\shop-project\target\classes started by bratu in C:\Users\bratu\OneDrive\Рабочий стол\shop-project)
+2026-10-22T13:59:35.275+05:00  INFO 3324 --- [electronova] [main] r.e.electroshop.ElectroShopApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-10-22T13:59:38.268+05:00  INFO 3324 --- [electronova] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-22T13:59:38.472+05:00  INFO 3324 --- [electronova] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 172 ms. Found 4 JPA repository interfaces.
+2026-10-22T13:59:40.197+05:00  INFO 3324 --- [electronova] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-10-22T13:59:40.247+05:00  INFO 3324 --- [electronova] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-22T13:59:40.247+05:00  INFO 3324 --- [electronova] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2026-10-22T13:59:40.488+05:00  INFO 3324 --- [electronova] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-10-22T13:59:40.489+05:00  INFO 3324 --- [electronova] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5052 ms
+2026-10-22T13:59:41.318+05:00  INFO 3324 --- [electronova] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-22T13:59:41.529+05:00  INFO 3324 --- [electronova] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2026-10-22T13:59:41.688+05:00  INFO 3324 --- [electronova] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-10-22T13:59:42.666+05:00  INFO 3324 --- [electronova] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-22T13:59:42.766+05:00  INFO 3324 --- [electronova] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-22T13:59:43.402+05:00  INFO 3324 --- [electronova] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/electronovadb user=SA
+2026-10-22T13:59:43.422+05:00  INFO 3324 --- [electronova] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-22T13:59:43.567+05:00  INFO 3324 --- [electronova] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-22T13:59:45.767+05:00  INFO 3324 --- [electronova] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-22T13:59:45.898+05:00  INFO 3324 --- [electronova] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-22T13:59:47.066+05:00  INFO 3324 --- [electronova] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-10-22T13:59:47.334+05:00  INFO 3324 --- [electronova] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2026-10-22T13:59:48.018+05:00  INFO 3324 --- [electronova] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2026-10-22T13:59:48.831+05:00  INFO 3324 --- [electronova] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/electronovadb'
+2026-10-22T13:59:49.137+05:00  INFO 3324 --- [electronova] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-10-22T13:59:49.175+05:00  INFO 3324 --- [electronova] [main] r.e.electroshop.ElectroShopApplication   : Started ElectroShopApplication in 15.251 seconds (process running for 16.417)
+2026-10-22T13:59:59.491+05:00  INFO 3324 --- [electronova] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-22T13:59:59.491+05:00  INFO 3324 --- [electronova] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-22T13:59:59.491+05:00  INFO 3324 --- [electronova] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-10-22T14:00:26.749+05:00  INFO 3324 --- [electronova] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-22T14:00:26.768+05:00  INFO 3324 --- [electronova] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-10-22T14:00:26.780+05:00  INFO 3324 --- [electronova] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-22T14:00:26.784+05:00  INFO 3324 --- [electronova] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-10-22T14:00:26.852+05:00  INFO 3324 --- [electronova] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-10-22T14:05:35.505+05:00  INFO 12240 --- [electronova] [main] r.e.electroshop.ElectroShopApplication   : Starting ElectroShopApplication using Java 21.0.12.1 with PID 12240 (C:\Users\bratu\OneDrive\Рабочий стол\shop-project\target\classes started by bratu in C:\Users\bratu\OneDrive\Рабочий стол\shop-project)
+2026-10-22T14:05:35.508+05:00  INFO 12240 --- [electronova] [main] r.e.electroshop.ElectroShopApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-10-22T14:05:38.007+05:00  INFO 12240 --- [electronova] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-22T14:05:38.183+05:00  INFO 12240 --- [electronova] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 151 ms. Found 4 JPA repository interfaces.
+2026-10-22T14:05:39.742+05:00  INFO 12240 --- [electronova] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-10-22T14:05:39.780+05:00  INFO 12240 --- [electronova] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-22T14:05:39.780+05:00  INFO 12240 --- [electronova] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2026-10-22T14:05:39.984+05:00  INFO 12240 --- [electronova] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-10-22T14:05:39.985+05:00  INFO 12240 --- [electronova] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4382 ms
+2026-10-22T14:05:40.687+05:00  INFO 12240 --- [electronova] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-22T14:05:40.845+05:00  INFO 12240 --- [electronova] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2026-10-22T14:05:40.961+05:00  INFO 12240 --- [electronova] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-10-22T14:05:41.845+05:00  INFO 12240 --- [electronova] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-22T14:05:41.925+05:00  INFO 12240 --- [electronova] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-22T14:05:42.545+05:00  INFO 12240 --- [electronova] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/electronovadb user=SA
+2026-10-22T14:05:42.547+05:00  INFO 12240 --- [electronova] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-22T14:05:42.693+05:00  INFO 12240 --- [electronova] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-22T14:05:44.732+05:00  INFO 12240 --- [electronova] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-22T14:05:44.847+05:00  INFO 12240 --- [electronova] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-22T14:05:45.931+05:00  INFO 12240 --- [electronova] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-10-22T14:05:46.150+05:00  INFO 12240 --- [electronova] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2026-10-22T14:05:46.838+05:00  INFO 12240 --- [electronova] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2026-10-22T14:05:47.564+05:00  INFO 12240 --- [electronova] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/electronovadb'
+2026-10-22T14:05:47.898+05:00  INFO 12240 --- [electronova] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-10-22T14:05:47.930+05:00  INFO 12240 --- [electronova] [main] r.e.electroshop.ElectroShopApplication   : Started ElectroShopApplication in 13.565 seconds (process running for 14.576)
+2026-10-22T14:07:16.124+05:00  INFO 12240 --- [electronova] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-22T14:07:16.126+05:00  INFO 12240 --- [electronova] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-22T14:07:16.130+05:00  INFO 12240 --- [electronova] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2026-10-22T14:08:02.257+05:00  INFO 12240 --- [electronova] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-22T14:08:02.288+05:00  INFO 12240 --- [electronova] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-10-22T14:08:02.308+05:00  INFO 12240 --- [electronova] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-22T14:08:02.313+05:00  INFO 12240 --- [electronova] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-10-22T14:08:02.404+05:00  INFO 12240 --- [electronova] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

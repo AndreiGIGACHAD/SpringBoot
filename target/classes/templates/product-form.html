@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Карточка товара</title>
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+    </head>
+    <body>
+        <div th:replace="~{fragments :: nav}">
+        </div>
+        <main class="container narrow">
+            <div class="eyebrow">PRODUCT MANAGEMENT</div>
+            <h1 th:text="${product.id == null ? 'Новый товар' : 'Редактирование товара'}">
+            </h1>
+            <p class="error" th:if="${error}" th:text="${error}">
+            </p>
+            <form class="form-card" th:object="${product}" th:action="${product.id == null ? '/products' : '/products/' + product.id}" method="post">
+                <div class="form-grid">
+                    <label>Название товара<input th:field="*{name}" required maxlength="150" placeholder="Например, смартфон">
+                    </label>
+                    <label>Категория<select th:field="*{category.id}" required>
+                            <option value="">Выберите категорию</option>
+                            <option th:each="c:${categories}" th:value="${c.id}" th:text="${c.name}">
+                            </option>
+                        </select>
+                    </label>
+                    <label>Бренд<input th:field="*{brand}" maxlength="100" placeholder="Производитель">
+                    </label>
+                    <label>Модель<input th:field="*{model}" maxlength="100" placeholder="Модель / серия">
+                    </label>
+                    <label>Артикул (SKU)<input th:field="*{sku}" required maxlength="40" placeholder="Например, PC-1001">
+                    </label>
+                    <label>Цена, ₽<input th:field="*{price}" type="number" min="0" step="0.01" required>
+                    </label>
+                    <label>Остаток на складе<input th:field="*{stock}" type="number" min="0" step="1" required>
+                    </label>
+                </div>
+                <label>Описание<textarea th:field="*{description}" rows="4" maxlength="1500" placeholder="Основные характеристики товара">
+                    </textarea>
+                </label>
+                <div class="form-actions">
+                    <button class="button">Сохранить товар</button>
+                    <a class="text-link" th:href="@{/products}">Отмена</a>
+                </div>
+            </form>
+        </main>
+    </body>
+</html>
